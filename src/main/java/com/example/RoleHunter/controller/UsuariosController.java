@@ -1,5 +1,6 @@
 package com.example.RoleHunter.controller;
 
+<<<<<<< HEAD
 
 import com.example.RoleHunter.service.ServicioCasting;
 import com.example.RoleHunter.service.ServicioUser;
@@ -20,4 +21,7 @@ public class UsuariosController {
 
     }
 
+=======
+public class UsuariosController {
+>>>>>>> 6a0bd633a5a0c9aacc022cc2f7eefe18efe44209
 }

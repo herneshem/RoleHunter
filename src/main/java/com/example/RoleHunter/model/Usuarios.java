@@ -64,5 +64,8 @@ public class Usuarios {
         this.id_Usuario = id_Usuario;
     }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6a0bd633a5a0c9aacc022cc2f7eefe18efe44209
