@@ -1,27 +1,37 @@
 package com.example.RoleHunter.controller;
 
-<<<<<<< HEAD
 
+import com.example.RoleHunter.model.Casting;
+import com.example.RoleHunter.model.Usuarios;
 import com.example.RoleHunter.service.ServicioCasting;
 import com.example.RoleHunter.service.ServicioUser;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping
+@RequestMapping("/usuarios")
+
 public class UsuariosController {
 
-    private final ServicioUser serviceuser;
+    private final ServicioUser serviciouser;
 
-    public  UsuariosController(ServicioUser serviceCasting){
-        this.serviceuser = serviceCasting;
-
+    public UsuariosController(ServicioUser serviciouser) {
+        this.serviciouser = serviciouser;
     }
 
-=======
-public class UsuariosController {
->>>>>>> 6a0bd633a5a0c9aacc022cc2f7eefe18efe44209
+
+    @GetMapping("/user")
+    public String viewCast(){
+
+        return "serviciouser.list()";
+    }
+
+
+    @PostMapping("/newuser")
+    public Usuarios createUsuarios(@RequestBody Usuarios usuarios) {
+        return serviciouser.save(usuarios);
+    }
 }
+
+
+
