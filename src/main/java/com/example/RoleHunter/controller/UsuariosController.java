@@ -29,12 +29,10 @@ public class UsuariosController {
 
         return serviciouser.list();
     }
-
-   /*@GetMapping("/user")
-    public ServicioUser get(){
-
-        return "serviciouser.list()";
-    }*/
+    @PostMapping("/login")
+    public Usuarios loginUser(@RequestBody Usuarios credentials) {
+        return serviciouser.login(credentials.getNombre(), credentials.getPassword());
+    }
 
     @Operation(summary = "Obtener recurso", description = "Devuelve los parametros de ids")
     @GetMapping("/{id_Usuario}")
@@ -44,6 +42,7 @@ public class UsuariosController {
     }
 
 
+    @Operation(summary = "Obtener datos", description = "Devuelve los campos")
     @PostMapping("/newuser")
     public Usuarios createUsuarios(@RequestBody Usuarios usuarios) {
         return serviciouser.save(usuarios);

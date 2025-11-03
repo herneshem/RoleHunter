@@ -22,6 +22,14 @@ public class ServicioUser {
         return userRep.findById(id_Usuario).orElse(null);
     }
 
+    public Usuarios login(String nombre, String password) {
+        Usuarios usuario = userRep.findByNombre(nombre);
+        if (usuario == null || !usuario.getPassword().equals(password)) {
+            return null;
+        }
+        return usuario;
+    }
+
     public Usuarios save(Usuarios usuarios) {
         return userRep.save(usuarios);
     }
