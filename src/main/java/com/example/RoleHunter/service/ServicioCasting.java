@@ -19,6 +19,9 @@ public class ServicioCasting {
         return castingRep.findAll();
     }
 
+    public  Casting getCasting(Long id_Casting){
+        return castingRep.findById(id_Casting).orElse(null);
+}
 
     public Casting save(Casting casting) {
         return castingRep.save(casting);

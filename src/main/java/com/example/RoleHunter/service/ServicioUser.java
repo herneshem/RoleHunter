@@ -18,6 +18,10 @@ public class ServicioUser {
         return userRep.findAll();
     }
 
+    public Usuarios getUserRep(Long id_Usuario) {
+        return userRep.findById(id_Usuario).orElse(null);
+    }
+
     public Usuarios save(Usuarios usuarios) {
         return userRep.save(usuarios);
     }

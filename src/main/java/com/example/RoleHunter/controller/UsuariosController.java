@@ -6,11 +6,15 @@ import com.example.RoleHunter.model.Usuarios;
 import com.example.RoleHunter.service.ServicioCasting;
 import com.example.RoleHunter.service.ServicioUser;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/usuarios")
-
+@Tag(name = "EndpointUusarios", description = "usuarios")
 public class UsuariosController {
 
     private final ServicioUser serviciouser;
@@ -19,11 +23,24 @@ public class UsuariosController {
         this.serviciouser = serviciouser;
     }
 
+    @Operation(summary = "Obtener recurso", description = "Devuelve los campos de usuario")
+    @GetMapping
+    public List<Usuarios> List(){
 
-    @GetMapping("/user")
-    public String viewCast(){
+        return serviciouser.list();
+    }
+
+   /*@GetMapping("/user")
+    public ServicioUser get(){
 
         return "serviciouser.list()";
+    }*/
+
+    @Operation(summary = "Obtener recurso", description = "Devuelve los parametros de ids")
+    @GetMapping("/{id_Usuario}")
+    public Usuarios getUserRep(@PathVariable Long id_Usuario){
+
+        return serviciouser.getUserRep(id_Usuario);
     }
 
 
