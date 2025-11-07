@@ -33,4 +33,8 @@ public class ServicioUser {
     public Usuarios save(Usuarios usuarios) {
         return userRep.save(usuarios);
     }
+
+    public void delete(Long id_Usuario){
+        userRep.deleteById(id_Usuario);
+    }
 }
