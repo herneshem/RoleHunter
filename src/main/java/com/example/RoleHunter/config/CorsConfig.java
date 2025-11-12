@@ -14,7 +14,7 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // todas las rutas
+                registry.addMapping("/**") // Para todas las rutas porque me salen errores de cors si los dejo en el controlador
                         .allowedOrigins("http://localhost:4200") // frontend
                         .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
                         .allowedHeaders("*");

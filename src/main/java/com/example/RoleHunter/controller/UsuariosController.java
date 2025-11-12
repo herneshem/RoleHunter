@@ -18,7 +18,7 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/usuarios")
 @Tag(name = "EndpointUusarios", description = "usuarios")
-public class UsuariosController {
+public class    UsuariosController {
 
     private final ServicioUser serviciouser;
 
